@@ -12,7 +12,9 @@ public class T implements Runnable{
     public void run() {
         //LazySingleton lazySingleton = LazySingleton.getInstance();
         //LazyDoubleCheckSingleton lazySingleton = LazyDoubleCheckSingleton.getInstance();
-        StaticInnerClassSingleton lazySingleton = StaticInnerClassSingleton.getInstance();
-        System.out.println(Thread.currentThread().getName()+" "+lazySingleton);
+        //StaticInnerClassSingleton lazySingleton = StaticInnerClassSingleton.getInstance();
+        ContainerSingleton.putInstance("object",new Object());
+        Object instance = ContainerSingleton.getInstance("object");
+        System.out.println(Thread.currentThread().getName()+" "+instance);
     }
 }
